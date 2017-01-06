@@ -1,4 +1,3 @@
-import time
 import requests
 from lxml import html
 
@@ -59,6 +58,7 @@ class mailer:
             return mail
 
 if __name__ == '__main__':
+    import time
     m = mailer()
     email_address = m.getEmail()
     print 'E-mail: %s' % email_address
