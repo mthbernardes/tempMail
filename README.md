@@ -8,9 +8,7 @@ It's a python library to help you automatize the singup process in web applicati
 
 #Install
 <pre>
-git clone https://github.com/mthbernardes/tempMail.git
-cd tempMail
-pip install -r dependencies.txt
+pip install tempMail
 </pre>
 
 #Usage
