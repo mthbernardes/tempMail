@@ -1,3 +1,4 @@
+import time
 import requests
 from lxml import html
 
@@ -53,12 +54,18 @@ class mailer:
             url_body = tree.xpath('//*[@id="iframe"]/@src')[0]
             r = requests.get(url_body,cookies=cookies)
             tree = html.fromstring(r.content)
-            body = tree.xpath('/html/body/div[2]')[0]
-            mail['body'] = body.text_content()
+            body = tree.xpath('/html/body/div[2]')
+            if body:
+                mail['body'] = body[0].text_content()
+            else:
+                body = tree.xpath('/html/body/text()')
+                if body:
+                    mail['body'] = body[0]
+                else:
+                    mail['body'] = 'Impossible to get the body'
             return mail
 
 if __name__ == '__main__':
-    import time
     m = mailer()
     email_address = m.getEmail()
     print 'E-mail: %s' % email_address
