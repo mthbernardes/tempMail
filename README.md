@@ -3,7 +3,9 @@ tempail.com terminal interface
 
 #What is tempMail
 <pre>
-It's a python library to help you automatize the singup process in web applications, it gives you a temporary e-mail(<a href="https://tempail.com/">tempail.com</a>) to make the singup and returns a python dict when receives an e-mail.
+It's a python library to help you automatize the singup process in web applications,
+it gives you a temporary e-mail(<a href="https://tempail.com/">tempail.com</a>) 
+to make the singup and returns a python dict when receives an e-mail.
 </pre>
 
 #Install
@@ -14,9 +16,9 @@ pip install tempMail
 #Usage
 <pre>
 import time
-from tempMail import mailer
+from tempMail import tempMail
 
-m = mailer()
+m = tempMail.mailer()
 email_address = m.getEmail()
 print 'E-mail: %s' % email_address
 
