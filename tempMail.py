@@ -53,16 +53,7 @@ class mailer:
             tree = html.fromstring(r.content)
             url_body = tree.xpath('//*[@id="iframe"]/@src')[0]
             r = requests.get(url_body,cookies=cookies)
-            tree = html.fromstring(r.content)
-            body = tree.xpath('/html/body/div[2]')
-            if body:
-                mail['body'] = body[0].text_content()
-            else:
-                body = tree.xpath('/html/body/text()')
-                if body:
-                    mail['body'] = body[0]
-                else:
-                    mail['body'] = 'Impossible to get the body'
+            mail['body'] = r.content
             return mail
 
 if __name__ == '__main__':
