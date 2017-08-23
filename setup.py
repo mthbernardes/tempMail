@@ -11,5 +11,5 @@ setup(
     keywords='email temporary',
     description=u'Module to generate an temporary e-mail',
     packages=['tempMail'],
-    install_requires=['requests','lxml'],
+    install_requires=['requests', 'lxml'],
 )
